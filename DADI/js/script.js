@@ -22,3 +22,6 @@ else if (num_computer > num_player){
 else{
     console.log('il giocatore ha vinto');
 }
+
+
+
