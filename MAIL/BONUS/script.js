@@ -7,23 +7,31 @@
 //         2.2.0 stampa: la mail non è inclusa nella lista
 
 
-const mail_list = ['pippo@gmail.com', 'topolino@gmail.com', 'paperino@gmail.com', 'archimede@gmail.com'];
+const mail_list = ['pippo@topolinia.com', 'topolino@topolinia.com', 'paperino@topolinia.com', 'archimede@topolinia.com'];
 
-let search_mail = prompt('Inserisci la tua mail');
+let search_mail = document.getElementById('Inserisci la tua mail');
 
-let control = false;
+let button = document.getElementById('bottone');
+button.addEventListener(`clik`, function () {
 
-for(let i = 0; i < mail_list.length; i++){
+    let ins_mail = document.getElementById("ins_mail").value;
+    console.log(ins_mail);
 
-    if (mail_list[i] == search_mail){
-        control = true;
+    let control = false;
+
+    for (let i = 0; i < mail_list.length; i++) {
+
+        if (mail_list[i] === search_mail) {
+            control = true;
+        }
     }
-}
 
     if (control) {
-        console.log('Accesso Effettuato')
+        document.getElementById('chiamata').innerHTML = 'Accesso Effetuato';
+    
     }
-    else{
-        console.log('Mail Errata')
+    else {
+        document.getElementById('chiamata').innerHTML = 'Mail Errata';
+        
     }
-
+})
