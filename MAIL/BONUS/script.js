@@ -1,22 +1,19 @@
 // .Descrizione dello svolgimento delle operazioni da applicare:
-// 1. Chiedere all'utente la sua mail,
-// 2. fare un controllo della lista di chi può accedere
-//     2.1 Se la mail è presente nella lista
-//         2.1.0 stampa: la mail è corretta
-//     2.2 Se la mail non è presente nella lista
-//         2.2.0 stampa: la mail non è inclusa nella lista
 
-
+// Lista mail registrate
 const mail_list = ['pippo@topolinia.com', 'topolino@topolinia.com', 'paperino@topolinia.com', 'archimede@topolinia.com'];
 
-let search_mail = document.getElementById('Inserisci la tua mail');
-
+// Collegare il bottone
 let button = document.getElementById('bottone');
-button.addEventListener(`clik`, function () {
 
-    let ins_mail = document.getElementById("ins_mail").value;
+// Bottone per importare la mail al click
+button.addEventListener(`click`, function () {
+
+    // Recuperare dall'html la richiesta della mail
+    search_mail = document.getElementById("ins_mail").value;
     console.log(ins_mail);
 
+    // Effettuare un controllo tramite l'operatore booleano 
     let control = false;
 
     for (let i = 0; i < mail_list.length; i++) {
@@ -25,13 +22,14 @@ button.addEventListener(`clik`, function () {
             control = true;
         }
     }
-
+    // SE: la mail è nella lista, ALLORA: stamperà 'Accesso Effettuato' 
     if (control) {
-        document.getElementById('chiamata').innerHTML = 'Accesso Effetuato';
-    
+        document.getElementById('chiamata').innerHTML = 'Accesso Effettuato';
+
     }
+    // SE: la mail non si trova nella lista, ALLORA: stamperà 'Mail Errata' 
     else {
         document.getElementById('chiamata').innerHTML = 'Mail Errata';
-        
+
     }
-})
+});
