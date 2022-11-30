@@ -20,3 +20,10 @@ for(let i = 0; i < mail_list.length; i++){
     }
 }
 
+    if (control) {
+        console.log('Accesso Effettuato')
+    }
+    else{
+        console.log('Mail Errata')
+    }
+
